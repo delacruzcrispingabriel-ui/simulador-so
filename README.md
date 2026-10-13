@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Proyecto Simulador de Sistema Operativo
 
 ## Módulos Incluidos
@@ -8,3 +9,6 @@
 ## Ejecución
 ```bash
 python main.py
+=======
+# AVANCE_PROYECTO_SO
+>>>>>>> 12d3ffdd7cdd9fc337b5c620ffd5a02784308263
