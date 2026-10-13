@@ -1,1 +1,1 @@
-# simulador-so
+# AVANCE_PROYECTO_SO
