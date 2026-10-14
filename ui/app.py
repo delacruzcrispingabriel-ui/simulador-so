@@ -4,12 +4,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from ui.estilos import aplicar_estilos
-
-PESTANAS = [
-    ("1. Mostrador", "Planificación de procesos"),
-    ("2. Catálogo", "Sincronización"),
-    ("3. Estantes", "Gestión de memoria"),
-]
+from ui.tab_mostrador import TabMostrador
 
 
 class App(tk.Tk):
@@ -23,8 +18,9 @@ class App(tk.Tk):
         cuaderno = ttk.Notebook(self)
         cuaderno.pack(fill="both", expand=True)
 
-        for titulo, tema in PESTANAS:
-            cuaderno.add(self._pestana_provisional(cuaderno, tema), text=titulo)
+        cuaderno.add(TabMostrador(cuaderno), text="1. Mostrador")
+        cuaderno.add(self._pestana_provisional(cuaderno, "Sincronización"), text="2. Catálogo")
+        cuaderno.add(self._pestana_provisional(cuaderno, "Gestión de memoria"), text="3. Estantes")
 
     def _pestana_provisional(self, padre, tema):
         """Cartel temporal; se reemplaza cuando se construye cada pestaña."""
