@@ -1,5 +1,4 @@
 """Ventana principal: una pestaña por módulo."""
-"""Ventana principal: una pestaña por módulo."""
 
 import tkinter as tk
 from tkinter import ttk
@@ -7,6 +6,7 @@ from tkinter import ttk
 from ui.estilos import aplicar_estilos
 from ui.tab_mostrador import TabMostrador
 from ui.tab_catalogo import TabCatalogo
+from ui.tab_estantes import TabEstantes
 
 
 class App(tk.Tk):
@@ -22,11 +22,8 @@ class App(tk.Tk):
 
         cuaderno.add(TabMostrador(cuaderno), text="1. Mostrador")
         cuaderno.add(TabCatalogo(cuaderno), text="2. Catálogo")
-        cuaderno.add(self._pestana_provisional(cuaderno, "Gestión de memoria"), text="3. Estantes")
+        cuaderno.add(TabEstantes(cuaderno), text="3. Estantes")
 
-    def _pestana_provisional(self, padre, tema):
-        """Cartel temporal; se reemplaza cuando se construye cada pestaña."""
-        marco = ttk.Frame(padre)
-        ttk.Label(marco, text=f"{tema}\n(en construcción)",
-                  style="Titulo.TLabel", justify="center").pack(expand=True)
-        return marco
+
+if __name__ == "__main__":
+    App().mainloop()
