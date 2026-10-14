@@ -17,7 +17,7 @@ from ui.estilos import (COLOR_FONDO, COLOR_MADERA, COLOR_MADERA_CLARA,
 
 PASO_MS = 350                 # pausa entre eventos al reproducir la simulación
 USUARIOS_PRESTAMO = 5
-EJEMPLARES_INICIALES = 1
+EJEMPLARES_INICIALES = 3
 TITULO_LIBRO = "Sistemas Operativos Modernos"
 
 # Formato de los mensajes del kernel (kernel/sincronizacion). Esta pestaña
