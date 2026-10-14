@@ -1,10 +1,12 @@
 """Ventana principal: una pestaña por módulo."""
+"""Ventana principal: una pestaña por módulo."""
 
 import tkinter as tk
 from tkinter import ttk
 
 from ui.estilos import aplicar_estilos
 from ui.tab_mostrador import TabMostrador
+from ui.tab_catalogo import TabCatalogo
 
 
 class App(tk.Tk):
@@ -19,7 +21,7 @@ class App(tk.Tk):
         cuaderno.pack(fill="both", expand=True)
 
         cuaderno.add(TabMostrador(cuaderno), text="1. Mostrador")
-        cuaderno.add(self._pestana_provisional(cuaderno, "Sincronización"), text="2. Catálogo")
+        cuaderno.add(TabCatalogo(cuaderno), text="2. Catálogo")
         cuaderno.add(self._pestana_provisional(cuaderno, "Gestión de memoria"), text="3. Estantes")
 
     def _pestana_provisional(self, padre, tema):
