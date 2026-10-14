@@ -29,6 +29,7 @@ Requiere Python 3 con Tkinter, sin instalar nada más:
     python3 main.py
 
 ## Integrantes
-
-- (completar)
-EOF
+Aramburu Muñoz Brad Justine 
+De la Cruz Crispin Jhon Gabriel 
+Espinoza Lozano Jhon Arnold
+Huanchi Supo Daniel Angel
