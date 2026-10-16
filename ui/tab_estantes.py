@@ -18,6 +18,7 @@ from kernel.memoria.belady import demostrar_belady, texto_anomalia
 from ui.estilos import (COLOR_FONDO, COLOR_MADERA, COLOR_ROJO, COLOR_TEXTO,
                         COLOR_VERDE)
 
+from ui.ventana_paginacion import VentanaPaginacion
 CAPACIDAD = 20          # posiciones del estante
 COLUMNAS = 5            # el estante se dibuja en filas de 5 posiciones
 ALTO_CELDA = 54
@@ -48,7 +49,7 @@ class TabEstantes(ttk.Frame):
         self._pasos = []             # pasos del algoritmo elegido
         self._cursor = 0             # cuántos pedidos ya se mostraron
         self._marcos_sim = 3
-
+        self._ventana_paginacion = None
         self.columnconfigure(0, weight=5)
         self.columnconfigure(1, weight=4)
         self.rowconfigure(0, weight=1)
@@ -110,6 +111,10 @@ class TabEstantes(ttk.Frame):
         ttk.Button(izq, text="Demostrar anomalía de Belady", style="Accion.TButton",
                    command=self._mostrar_belady).grid(row=1, column=0, sticky="ew",
                                                       pady=(8, 0))
+                   
+        ttk.Button(izq, text="Paginación y tabla de páginas", style="Accion.TButton",
+                   command=self._abrir_paginacion).grid(row=2, column=0, sticky="ew",
+                                                        pady=(6, 0))                   
 
     def _construir_derecha(self):
         der = ttk.Frame(self)
@@ -372,6 +377,16 @@ class TabEstantes(ttk.Frame):
                                    outline=borde, width=3 if libro == resaltar else 2)
                 c.create_text((x0 + x1) / 2, 45, text=f"Libro {libro}", fill="white",
                               font=("Arial", 9, "bold"))
+                
+    # ---------- Paginación ----------
+
+    def _abrir_paginacion(self):
+        """Abre la ventana de paginación (una sola a la vez)."""
+        if self._ventana_paginacion is not None and self._ventana_paginacion.winfo_exists():
+            self._ventana_paginacion.lift()
+            return
+        self._ventana_paginacion = VentanaPaginacion(self, color_libro)                
+                
 
     # ---------- Anomalía de Belady ----------
 
