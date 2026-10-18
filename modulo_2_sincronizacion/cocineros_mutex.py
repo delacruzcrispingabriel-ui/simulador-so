@@ -2,7 +2,7 @@ import threading
 import time
 
 def cocinero_task(id_cocinero, utensilio_izq, utensilio_der):
-    # Evitar interbloqueo invirtiendo orden para el último cocinero
+
     primero, segundo = (utensilio_izq, utensilio_der) if id_cocinero != 4 else (utensilio_der, utensilio_izq)
 
     with primero:
