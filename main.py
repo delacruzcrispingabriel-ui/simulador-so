@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-# Importamos las funciones de cada módulo que creaste
 from modulo_1_cpu.proceso import Proceso
 from modulo_1_cpu.planificador import ejecutar_round_robin
 from modulo_2_sincronizacion.cocineros_mutex import cocinero_task
@@ -13,11 +12,11 @@ class DashboardSO(tk.Tk):
         self.title("Sistema Operativo Simulado - Panel de Control")
         self.geometry("650x450")
 
-        # Crear contenedor de pestañas
+        
         notebook = ttk.Notebook(self)
         notebook.pack(fill="both", expand=True, padx=10, pady=10)
 
-        # Crear las 3 pestañas para cada integrante/módulo
+        
         self.tab1 = ttk.Frame(notebook)
         self.tab2 = ttk.Frame(notebook)
         self.tab3 = ttk.Frame(notebook)
@@ -31,7 +30,7 @@ class DashboardSO(tk.Tk):
         self.setup_modulo2()
         self.setup_modulo3()
 
-    # --- PESTAÑA MÓDULO 1 ---
+    
     def setup_modulo1(self):
         lbl = ttk.Label(self.tab1, text="Simulación de Planificación Round Robin", font=("Arial", 12, "bold"))
         lbl.pack(pady=10)
@@ -51,7 +50,7 @@ class DashboardSO(tk.Tk):
         for item in resultado:
             self.txt_m1.insert(tk.END, f"Proceso: {item[0]} | Tiempo de ejecución final: {item[1]}s\n")
 
-    # --- PESTAÑA MÓDULO 2 ---
+    # 
     def setup_modulo2(self):
         lbl = ttk.Label(self.tab2, text="Simulación de Concurrencia (Filósofos / Cocineros)", font=("Arial", 12, "bold"))
         lbl.pack(pady=10)
