@@ -1,4 +1,4 @@
-"""Pruebas de procesos (Módulo 1). Ejecutar: python3 -m unittest discover tests"""
+"""Pruebas de procesos (Módulo 1)."""
 
 import os
 import unittest
